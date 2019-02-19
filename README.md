@@ -22,12 +22,14 @@ For this project I will be using the following technologies:
 * **Libraries and frameworks:** jQuery, Handlebars.js, Node.js, Express, 
 * **Database:** PostgreSQL
 * **Deployment platform:** Heroku
-* **APIs:** 
+* **APIs:** Google Geocoding, Yelp, Dark Sky, The Movie DB
 
 ## Change Log
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+
+`02-19-2019 9:00am` - Created Heroku app in repo for the app. No content to deploy yet. Pushed to Heroku and verified that instance is successfully running. Renamed Heroku app to `lab-06-city-explorer`. Need to have deployable app before `heroku open` will work.
 
 ## Credits and Collaborations
 
