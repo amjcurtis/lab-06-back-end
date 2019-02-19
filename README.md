@@ -7,13 +7,25 @@ Repo for Code 301, Lab 06 (Node, npm, Express, and APIs) - City Explorer
 **Version**: 1.0.0 (increment the patch/fix version number if we make more commits past first submission)
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+
+I will be building a stand-alone back end which will interact with a static front end. Working with a new partner each day, I will request data from various third-party APIs, modify the data as needed, and send the data to the client to be displayed in the browser. In the later stages of this week's project I will be persisting data in a SQL database.
+
+Each day of this project I and my pair-programming partner will deploy this back end app as a new instance on Heroku.
+
+I will be hooking up the back-end app to the front-end code base for the client, but I will not be modifying the client-side code in any way.
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+
+For this project I will be using the following technologies: 
+
+* **Languages:** JavaScript, SQL
+* **Libraries and frameworks:** jQuery, Handlebars.js, Node.js, Express, 
+* **Database:** PostgreSQL
+* **Deployment platform:** Heroku
+* **APIs:** 
 
 ## Change Log
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
@@ -21,7 +33,8 @@ Repo for Code 301, Lab 06 (Node, npm, Express, and APIs) - City Explorer
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
 ## Credits and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+
+This project was done in collaboration with Vanessa Wei ([Wei9023](https://github.com/Wei9023)).
 
 
 ## Number and name of feature: 
