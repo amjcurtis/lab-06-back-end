@@ -24,12 +24,9 @@ app.get('/weather', (request, response) => {
   response.send(weatherData);
 });
 
+// Need a catch-all route that invokes handleError() if bad request comes in
+app.use('*', handleError);
 
-// Need a catch-all route that invokes handle-Error() if bad request comes in
-app.use('*', (request, response) => {
-  console.log('server hit');
-  response.send(`Sorry, that route does not exist`);
-});
 // Make sure server is listening for requests
 app.listen(PORT, () => console.log(`App is up on ${PORT}`));
 
@@ -61,10 +58,11 @@ function getWeather() {
 
   // Need to create an array, since we'll be returning an array of objects
   const weatherSummaries= [];
+
   // Need to pass each object in the raw data through the constructor
   // Need to iterate over our raw data
   darkskyData.daily.data.forEach(day => {
-  // Need to push the new instances into the array we just created
+    // Need to push the new instances into the array we just created
     weatherSummaries.push(new Weather(day));
   });
   // Return the array that's been filled with instances
