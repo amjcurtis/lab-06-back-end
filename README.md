@@ -31,6 +31,8 @@ For this project I will be using the following technologies:
 
 `02-19-2019 9:00am` - Created Heroku app in repo for the app. No content to deploy yet. Pushed to Heroku and verified that instance is successfully running. Renamed Heroku app to `lab-06-city-explorer`. Need to have deployable app before `heroku open` will work.
 
+`02-19-2019 10:40am` - Filled out initial server variables and helper functions. Tested that server works.
+
 ## Credits and Collaborations
 
 This project was done in collaboration with Vanessa Wei ([Wei9023](https://github.com/Wei9023)).
