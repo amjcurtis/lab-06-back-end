@@ -20,11 +20,12 @@ app.get('/location', (request, response) => {
 
 // Need a route so client can request weather data
 // Only implement that AFTER you have "location" working
+app.get('/weather', (request, response) => {
+  const weatherData = getWeather(request.query.data);
+  response.send(weatherData);
+})
 
-
-
-
-// Need a catch-all route that invokes handle-Error() if bad request comes in
+// Need a catch-all route that invokes handleError() if bad request comes in
 
 // Make sure server is listening for requests
 app.listen(PORT, () => console.log(`App is up on ${PORT}`));
@@ -56,16 +57,16 @@ function getWeather() {
   const darkskyData = require('./data/darksky.json');
 
   // Need to create an array, since we'll be returning an array of objects
-
-  // Need to iterate over our raw data
-  // Need to pass each object in the raw data through the constructor
-  // Need to push the new instances into the array we just created
-
+  let weatherSummaries = [];
+  
+  // Need to iterate over our raw data  
   darkskyData.daily.data.forEach(day => {
+    // Need to pass each object in the raw data through the constructor
+    // Need to push the new instances into the array we just created
     weatherSummaries.push(new Weather(day));
   });
   // Return the array that's been filled with instances
-
+  return weatherSummaries;
 }
 
 // Constructor needed for function getWeather()
