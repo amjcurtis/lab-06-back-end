@@ -71,9 +71,9 @@ function searchToLatLong(query) {
 function Location(query, res) { // 'res' is short for 'result'
   console.log('res in Location()', res);
   this.search_query = query;
-  this.formatted_query = res.results[0].formatted_address;
-  this.latitude = res.results[0].geometry.location.lat;
-  this.longitude = res.results[0].geometry.location.lng;
+  this.formatted_query = res.results[0].formatted_address; // TODO: CHANGE [0] TO res.body.results
+  this.latitude = res.results[0].geometry.location.lat; // TODO: CHANGE [0] TO res.body.results
+  this.longitude = res.results[0].geometry.location.lng; // TODO: CHANGE [0] TO res.body.results
 }
 
 function getWeather() {
