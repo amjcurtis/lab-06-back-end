@@ -48,7 +48,12 @@ function handleError(err, res) {
 
 // 
 function searchToLatLong(query) {
+  // OLD WAY TO RETRIEVE DATA
   const geoData = require('./data/geo.json');
+  
+  // NEW WAY TO RETRIEVE DATA
+  // Send API URL with query string we want: URL plus '?address=${query}&key=${process.env.GEOCODE_API_KEY}`;
+  
   const location = new Location(query, geoData);
   console.log('location in searchToLatLong()', location);
   return location;
