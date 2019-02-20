@@ -6,6 +6,7 @@ require('dotenv').config();
 // Application dependencies
 const express = require('express');
 const cors = require('cors');
+const superagent = require('superagent');
 
 // Application setup
 const PORT = process.env.PORT || 3000;
@@ -53,10 +54,18 @@ function searchToLatLong(query) {
   
   // NEW WAY TO RETRIEVE DATA
   // Send API URL with query string we want: URL plus '?address=${query}&key=${process.env.GEOCODE_API_KEY}`;
-  
-  const location = new Location(query, geoData);
-  console.log('location in searchToLatLong()', location);
-  return location;
+
+  // OLD CODE (IS REPLACED BY BLOCK BELOW 
+  // const location = new Location(query, geoData);
+  // console.log('location in searchToLatLong()', location);
+  // return location;
+
+  // NEW CODE FROM CLASS  
+  return superagent.get(url)
+    .then(result => {
+      return new Location(query, result);
+    })
+    .catch(error => handleError);
 }
 
 function Location(query, res) { // 'res' is short for 'result'
