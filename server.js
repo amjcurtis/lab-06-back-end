@@ -1,6 +1,6 @@
 'use strict';
 
-// Load environmnet variables from .env file
+// Load environment variables from .env file
 require('dotenv').config();
 
 // Application dependencies
@@ -12,25 +12,33 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(cors());
 
+////////////////////////////////////////
 // API ROUTES
-app.get('/location', (request, response) => {
-  const locationData = searchToLatLong(request.query.data);
-  response.send(locationData);
+////////////////////////////////////////
+
+// Event listener for route 'location' (so client can request location data)
+app.get('/location', (req, res) => { // 'req is request, 'res' is response
+  const locationData = searchToLatLong(req.query.data);
+  res.send(locationData);
 });
 
-// Need a route so client can request weather data
-app.get('/weather', (request, response) => {
-  const weatherData = getWeather(request.query.data);
-  response.send(weatherData);
+// Event listener for route 'weather'
+app.get('/weather', (req, res) => {
+  const weatherData = getWeather(req.query.data);
+  res.send(weatherData);
 });
 
-// Need a catch-all route that invokes handleError() if bad request comes in
+// Catch-all route that invokes error handler if bad request for location path comes in
+// Only checks for bad *path*. More robust handler will handle other types of bad requests
 app.use('*', handleError);
 
-// Make sure server is listening for requests
+// Event listener that makes server listen for requests
+// Server starter to listen to port goes below routes
 app.listen(PORT, () => console.log(`App is up on ${PORT}`));
 
+////////////////////////////////////////
 // HELPER FUNCTIONS
+////////////////////////////////////////
 
 // Error handler
 function handleError(err, res) {
@@ -38,6 +46,7 @@ function handleError(err, res) {
   if (res) res.status(500).send('Sorry, something went wrong');
 }
 
+// 
 function searchToLatLong(query) {
   const geoData = require('./data/geo.json');
   const location = new Location(query, geoData);
@@ -45,7 +54,7 @@ function searchToLatLong(query) {
   return location;
 }
 
-function Location(query, res) {
+function Location(query, res) { // 'res' is short for 'result'
   console.log('res in Location()', res);
   this.search_query = query;
   this.formatted_query = res.results[0].formatted_address;
@@ -73,5 +82,6 @@ function getWeather() {
 // Constructor needed for function getWeather()
 function Weather(day) {
   this.forecast = day.summary;
+  // Get Date/time on server itself (faster than requesting it from API)
   this.time = new Date(day.time * 1000).toString().slice(0, 15);
 }
