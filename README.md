@@ -1,7 +1,7 @@
 # City Explorer
 
 **Author**: Andrew Curtis
-**Version**: 1.0.0 (increment the patch/fix version number if we make more commits past first submission)
+**Version**: 2.0.0 (increment the patch/fix version number if we make more commits past first submission)
 
 ## Overview
 
@@ -12,7 +12,8 @@ Each day of this project I and my pair-programming partner will deploy this back
 I will be hooking up the back-end app to the front-end code base for the client, but I will not be modifying the client-side code in any way.
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+
+Site is deployed to Heroku, so user must have internet connection, visit the deployed front end of the City Explorer app (https://codefellows.github.io/city_explorer/), and enter into the form the URL of the deployed back end (https://lab-06-city-explorer.herokuapp.com/). 
 
 ## Architecture
 
@@ -22,28 +23,55 @@ For this project I will be using the following technologies:
 * **Libraries and frameworks:** jQuery, Handlebars.js, Node.js, Express, 
 * **Database:** PostgreSQL
 * **Deployment platform:** Heroku
-* **APIs:** Google Geocoding, Yelp, Dark Sky, The Movie DB
+* **APIs:** Google Geocoding, Dark Sky
 
 ## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
 `02-19-2019 9:00am` - Created Heroku app in repo for the app. No content to deploy yet. Pushed to Heroku and verified that instance is successfully running. Renamed Heroku app to `lab-06-city-explorer`. Need to have deployable app before `heroku open` will work.
-
 `02-19-2019 10:40am` - Filled out initial server variables and helper functions. Tested that server works.
 
 ## Credits and Collaborations
 
 This project was done in collaboration with Vanessa Wei ([Wei9023](https://github.com/Wei9023)).
 
+# Features
 
-## Number and name of feature: 
+## Repo Setup 
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 30 min
 
-Start time: _____
+Start time: 9:00am
 
-Finish time: _____
+Finish time: 9:30am
 
-Actual time needed to complete: _____
+Actual time needed to complete: 30 min
+
+## Add Locations API Integration
+
+Estimate of time needed to complete: 90 min
+
+Start time: 9:30am
+
+Finish time: 11:00
+
+Actual time needed to complete: 90 min
+
+## Add Dark Sky weather API Integration
+
+Estimate of time needed to complete: 90 min
+
+Start time: 11:00am
+
+Finish time: 1:00pm
+
+Actual time needed to complete: 2 hours
+
+## Add Error Handling Functionality
+
+Estimate of time needed to complete: 30 min
+
+Start time: 1:15pm
+
+Finish time: 1:40pm
+
+Actual time needed to complete: 25 min
